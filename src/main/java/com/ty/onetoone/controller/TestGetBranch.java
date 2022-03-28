@@ -14,6 +14,10 @@ public class TestGetBranch {
 		EntityManagerFactory entityManagerFactory =Persistence.createEntityManagerFactory("dev");
 		EntityManager emEntityManager=entityManagerFactory.createEntityManager();
 		
+
+		//In this Branch has address ,that means inside Branch object ,there is address object present,
+		//If u call Hibernate ,then u will get object of address in Branch obj(bcz relationship)
+		
 		Branch branch = emEntityManager.find(Branch.class,1);
 		Address address = branch.getAddress();
 		
@@ -23,9 +27,6 @@ public class TestGetBranch {
 		System.out.println("Area  :"+address.getArea());
 		System.out.println("Pincode  :"+address.getPin());
 		System.out.println("State  :"+address.getState());
-		
-		//In this Branch has address ,that means inside Branch object ,there is address object present,
-		//If u call Hibernate ,then u will get object of address in Branch obj(bcz relationship)
 		
 
 		
